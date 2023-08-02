@@ -2,7 +2,7 @@ name: Continuous Deployment
 
 on:
   push:
-    branches: ["farhan"]
+    branches: ["main"]
 
 jobs:
   build:
@@ -24,6 +24,12 @@ jobs:
 
       - name: Read .env
         run: cat .env
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: env_file
+          path: .env
 
       # - name: Install dependencies
       #   run: yarn install
