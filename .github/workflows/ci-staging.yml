@@ -17,7 +17,7 @@ jobs:
           node-version: 14.x
 
       - name: Copy Env
-        run: cp .env-copy .env
+        run: cp .env.example .env
 
       - name: Add value to API_KEY
         run: echo "VITE_API_KEY=${{ secrets.VITE_API_KEY }}" >> .env
